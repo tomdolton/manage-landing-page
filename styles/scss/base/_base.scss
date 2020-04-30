@@ -1,0 +1,58 @@
+// -----------------------------------------------------------------------------
+// Basic styles
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// Body base styles
+body {
+  // background: $clr-white;
+}
+
+/**
+ * Reset default padding and margin on block elements
+ */
+ h1, h2, h3, h4, h5, h6 p, ul, ol, li {
+  padding: 0;
+  margin: 0;
+}
+
+/**
+ * Make images responsive
+ * 1. Image will never scale up larger than its original size
+ */
+img {
+  max-width: 100%; /* 1 */
+  height: auto;
+}
+
+
+
+a {
+  color: $clr-blue;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+
+ul, ol {
+  list-style: none;
+}

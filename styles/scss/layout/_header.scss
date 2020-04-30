@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// Header styles & layout
+// -----------------------------------------------------------------------------
+
+.header {
+  @include flex(row);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-bottom: solid black 1px;
+}
+
+
+.header__logo {
+  background: center / contain no-repeat url("../../../images/logo.svg");
+
+  width: 120px;
+  height: 18px;
+
+  @media (min-width: $bp-medium) {
+    width: 146px;
+    height: 24px;
+  }
+}
+
+
+.header__btn {
+  display: none;
+}
+
+@media (min-width: $bp-medium) {
+
+
+  .header__hamburger {
+    order: 2;
+  }
+
+  
+  .header__hamburger {
+    display: none;
+  }
+  
+  
+}
+
+
+@media (min-width: $bp-large) {
+  
+  .header__btn {
+    display: block;
+  }
+}

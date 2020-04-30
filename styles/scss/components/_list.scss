@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// List component
+// -----------------------------------------------------------------------------
+
+.list {
+  list-style: none;
+  position: relative;
+}
+
+.list__number {
+  background: $clr-red;
+  color: $clr-white;
+  display: inline-block;
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  margin-right: 0.875rem;
+}
+
+.list__heading {
+  background: $clr-red-light;
+  font-weight: 500;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding-right: 1rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list__text {
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.list__item {
+  margin-bottom: 3rem;
+}

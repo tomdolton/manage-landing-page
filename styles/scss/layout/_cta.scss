@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// Cta styles & layout
+// -----------------------------------------------------------------------------
+
+.cta {
+  background: $clr-red;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 90px;
+  position: relative;
+}
+
+.cta__heading {
+  color: $clr-white;
+  font-weight: 500;
+  max-width: 310px;
+  margin: 0 auto 2rem;
+}
+
+.cta::after {
+  content: "";
+  background: 0 50% / 100px no-repeat url("../../../images/bg-simplify-section-mobile.svg");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

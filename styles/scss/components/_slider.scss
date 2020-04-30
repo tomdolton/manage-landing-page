@@ -1,0 +1,37 @@
+// -----------------------------------------------------------------------------
+// Slider component
+// -----------------------------------------------------------------------------
+
+.slider__item {
+  display: none;
+  background: $clr-gray-light;
+  padding: 0 1.5rem 1.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.slider__item--active {
+  display: block;
+}
+
+
+
+.slider__image {
+  width: 70px;
+  height: auto;
+  transform: translateY(-35px);
+  margin-bottom: -1rem;
+}
+
+
+.slider__dot {
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px $clr-red solid;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+
+.slider__dot--active {
+  background: $clr-red;
+}

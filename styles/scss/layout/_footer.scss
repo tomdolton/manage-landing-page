@@ -1,0 +1,101 @@
+// -----------------------------------------------------------------------------
+// Footer styles & layout
+// -----------------------------------------------------------------------------
+
+// Base styles
+.footer {
+  background: $clr-blue-dark;
+  text-align: center;
+  padding-top: 3.125rem;
+  padding-bottom: 1rem;
+}
+
+
+
+// Layout
+.footer .container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+
+
+//
+// Logo
+// ==========================================================================
+
+.footer__logo {
+  grid-column: 1 / -1;
+  order: 4;
+  margin: 0 auto 2rem;
+  width: 100%;
+}
+
+
+
+//
+// Social Icons
+// ==========================================================================
+
+.footer__social-icons {
+  grid-column: 1 / -1;
+  order: 3;
+  margin-bottom: 3.25rem;
+
+  @include flex(row);
+  align-items: space-between;
+  margin-left: 17px;
+  margin-right: 17px;
+
+  & img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+
+
+//
+// Nav
+// ==========================================================================
+
+.footer__nav {
+  order: 1;
+  text-align: left;
+  justify-self: center;
+  margin-bottom: 2rem;
+
+  & a {
+    color: $clr-gray-light;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+  
+  & li {
+    margin-bottom: 0.6rem;
+  }
+}
+
+
+
+//
+// Form
+// ==========================================================================
+
+.footer__updates-form {
+  grid-column: 1 / -1;
+  margin-bottom: 2.75rem;
+}
+
+
+
+//
+// Copyright
+// ==========================================================================
+
+.footer__copyright {
+  color: $clr-gray-mid;
+  font-size: 0.8rem;
+  grid-column: 1 / -1;
+  order: 5;
+}

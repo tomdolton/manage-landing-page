@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// Updates form component
+// -----------------------------------------------------------------------------
+
+.updates-form {
+  position: relative;
+}
+
+.updates-form__input {
+  color: $clr-gray-mid;
+  font-size: 0.8rem;
+  width: 240px; 
+  border-radius: 50px;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.updates-form__error {
+  position: absolute;
+  top: 48px;
+  left: 21px;
+
+  font-size: 0.7rem;
+  color: $clr-red;
+}

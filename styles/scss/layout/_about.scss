@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// About styles & layout
+// -----------------------------------------------------------------------------
+
+.about {
+  padding-bottom: 1rem;
+}
+
+.about__heading-box {
+  text-align: center;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3.25rem;
+}
+
+.about__heading {
+  margin-bottom: 1.5rem;
+}
+
+
+/**
+ * @TODO
+ * Maybe move this to _list.scss
+ */
+.about__list {
+  padding-left: 1rem;
+  // margin-right: 1rem;
+
+}
