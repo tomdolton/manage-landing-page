@@ -5,8 +5,10 @@
 .slider__item {
   display: none;
   background: $clr-gray-light;
-  padding: 0 1.5rem 1.7rem;
-  margin-bottom: 0.5rem;
+  max-width: 335px;
+  height: 250px;
+  padding: 0 1rem 1.7rem;
+  margin: 0 auto 0.5rem;
 }
 
 .slider__item--active {
