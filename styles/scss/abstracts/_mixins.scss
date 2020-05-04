@@ -11,7 +11,9 @@
   }
 }
 
-// Flex
+
+
+// Standard flex container
 @mixin flex($direction) {
   display: flex;
   flex-direction: $direction;

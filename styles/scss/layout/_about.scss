@@ -9,10 +9,12 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-left: 20px; /* 3 */
-    padding-right: 20px; /* 3 */
+    padding: 0 20px 6rem;
+
   }
 }
+
+
 
 .about__heading-box {
   text-align: center;
@@ -26,8 +28,11 @@
   }
 }
 
+
+
 .about__heading {
   margin-bottom: 1.5rem;
+  font-size: 1.85rem;
 
   @media (min-width: $bp-large) {
     font-size: 2.4rem;
@@ -35,27 +40,10 @@
   }
 }
 
+
+
 .about__subheading {
   @media (min-width: $bp-large) {
-    font-size: 1rem;
-    /**
-     * @TODO
-     * put font size for this and heading here into typograohy for all similar?
-     */
-    
-    
     max-width: 330px;
   }
 }
-
-
-/**
- * @TODO
- * Maybe move this to _list.scss
- */
-.about__list {
-  padding-left: 1rem;
-  // margin-right: 1rem;
-
-}
-

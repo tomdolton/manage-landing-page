@@ -2,15 +2,21 @@
 // Updates form component
 // -----------------------------------------------------------------------------
 
+// Error event color
+$clr-error-red: rgb(255, 51, 51);
+
+
+
 .updates-form__input {
   color: $clr-gray-mid;
   font-size: 0.8rem;
-  width: 240px; 
+  width: 200px; 
   border-radius: 50px;
   border: none;
   padding: 0.775rem 1.5rem;
   margin-right: 0.25rem;
 
+  // For smaller mobile devices
   @media (max-width: 370px) {
     width: 100%;
     margin-bottom: 1rem;
@@ -18,23 +24,35 @@
 }
 
 
+
+.updates-form__input--error {
+  border: 1px solid $clr-error-red;
+  color: $clr-error-red;
+}
+
+
+
 .updates-form__btn {
+  // For smaller mobile devices
   @media (max-width: 370px) {
     width: 100%;
   }
 }
 
 
+
 .updates-form__error {
-  color: $clr-red;
+  color: $clr-error-red;
   font-size: 0.7rem;
+  font-style: italic;
   text-align: left;
-  // visibility: hidden;
+  visibility: hidden;
   
   display: block;
-  margin-top: 0.5rem;
-  margin-left: 1.5rem;
+  margin-top: 0.2rem;
+  margin-left: 1rem;
 
+  // For smaller mobile devices
   @media (max-width: 370px) {
     margin-left: 0;
     text-align: center; 
@@ -42,8 +60,11 @@
 
 }
 
-
-
 .updates-form__error--active {
   visibility: visible;
+}
+
+.updates-form__error--success {
+  visibility: visible;
+  color: $clr-white;
 }

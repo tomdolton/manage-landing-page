@@ -21,10 +21,14 @@ html {
   box-sizing: inherit;
 }
 
-// Body base styles
+
+
+// Prevent background images from creating side scroll
 body {
   overflow-x: hidden;
 }
+
+
 
 /**
  * Reset default padding and margin on block elements
@@ -33,6 +37,8 @@ body {
   padding: 0;
   margin: 0;
 }
+
+
 
 /**
  * Make images responsive

@@ -6,22 +6,37 @@ body {
   font: 400 16px $font-family;
 }
 
+
 h1, h2, h4 {
   color: $clr-blue;
   font-weight: 700;
 }
+
 
 h1 {
   font-size: 2.42rem;
   line-height: 1.3;
 }
 
-h2 {
-  font-size: 1.85rem;
-}
 
 p {
   font-size: 0.9rem;
   font-weight: 300;
   line-height: 2;
+}
+
+
+@media (min-width: $bp-large) {
+  h1 {
+    font-size: 3.35rem;
+  }
+
+  h2 {
+    line-height: 1.1;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
 }

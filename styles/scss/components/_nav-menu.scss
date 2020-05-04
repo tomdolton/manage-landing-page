@@ -18,8 +18,6 @@
   @media (min-width: $bp-medium) {
     position: static;
   }
-
-
 }
 
 
@@ -29,6 +27,11 @@
   font-size: 0.8rem;
   display: block;
   padding: 11px 0;
+  transition: $transition;
+
+  @include on-event {
+    color: $clr-gray-mid;
+  }
 
   @media (min-width: $bp-medium) {
     display: inline-block;
@@ -67,7 +70,7 @@
   top: 103px;
   border-radius: 5px;
   padding: 22px 0;
-  transition: 0.25s;
+  transition: $transition;
   z-index: 10; // Sits on top of modal when open //
 }
 
@@ -89,7 +92,7 @@
   z-index: -1; // 2 //
   visibility: hidden; // 2 //
   opacity: 0; // 3 //
-  transition: opacity 0.2s; // 3 //
+  transition: opacity $transition; // 3 //
 }
 // Modifier class added on hamburger menu click
 .modal--active {
@@ -97,4 +100,3 @@
   visibility: visible; // 2 //
   opacity: 1; // 3 //
 }
-

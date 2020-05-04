@@ -33,58 +33,7 @@ window.addEventListener("click", (e) => {
 
 
 //
-// Slider carousel
-// ==========================================================================
-
-//
-// Custom
-// ==========================================================================
-
-// let slideIndex = 1;
-// const duration = 6000;
-// const slides = [...document.querySelectorAll(".slider__item")];
-// const sliderDots = [...document.querySelectorAll(".slider__dot")];
-// const sliderDots2 = document.querySelectorAll(".slider__dot");
-
-// // Utility function to change a class on a document node
-// function changeClass(nodeArray, cssClass, index) {
-//   nodeArray.map(node => {
-//     node.classList.remove(cssClass);
-//   });
-//   nodeArray[index].classList.add(cssClass);
-// }
-
-// // Changes active classes on sider based on slideIndex
-// function changeSlide() {
-//   changeClass(slides, "slider__item--active", slideIndex);
-//   changeClass(sliderDots, "slider__dot--active", slideIndex);
-// }
-
-// // Bind click event to slider dots to call changeSide based on dot number
-// for (const dot of sliderDots) {
-//   dot.addEventListener("click", () => {
-//     slideIndex = sliderDots.indexOf(dot);
-//     changeSlide();
-//     clearInterval(timer);
-//     timer = setInterval(autoChange, duration);
-//   });
-// }
-
-// // Changes active classes automatically, called by setInterval
-// function autoChange() {
-//   if (slideIndex === slides.length - 1) {
-//     slideIndex = 0;
-//   } else {
-//     slideIndex++;
-//   }
-//   changeSlide();
-// }
-
-// let timer = setInterval(autoChange, duration);
-
-
-//
-// Initialize Flickity
+// Initialize Flickity carousel
 // ==========================================================================
 
 const carousel = document.querySelector(".main-carousel");
@@ -97,13 +46,12 @@ const flkty = new Flickity(carousel, {
 
 
 
-
-
 //
 // Form validation
 // ==========================================================================
 
 const form = document.querySelector(".updates-form");
+const input = document.querySelector(".updates-form__input");
 const error = document.querySelector(".updates-form__error");
 
 // Checks if argument is a valid email address string
@@ -117,18 +65,24 @@ function validateForm(formValue) {
 
   if (!formValue) {
     error.innerHTML = "Please enter your email address";
+    error.classList.remove("updates-form__error--success");
+    input.classList.add("updates-form__input--error");
   } else if (!validateEmail(formValue)) {
     error.innerHTML = "That is not a valid email address";
+    error.classList.remove("updates-form__error--success");
+    input.classList.add("updates-form__input--error");
   } else {
     error.innerHTML = "Successfully signed up to the mailing list!";
-    form[0].value = "";
+    input.classList.remove("updates-form__input--error");
+    error.classList.add("updates-form__error--success");
+    input.value = "";
   }
 }
 
 // Handle form submit event
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const value = e.target[0].value;
+  const value = input.value;
   error.classList.add("updates-form__error--active");
   validateForm(value);
 });

@@ -5,6 +5,7 @@
 .list {
   list-style: none;
   position: relative;
+  padding-left: 1rem;
 }
 
 
@@ -34,7 +35,11 @@
   margin-left: auto;
   margin-right: auto;
 
-  @media (min-width: $bp-medium) {
+  @media (min-width: 538px) {
+    border-radius: 50px;
+  }
+
+  @media (min-width: $bp-large) {
     background: none;
     margin: 0;
     position: relative;
@@ -48,7 +53,9 @@
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
-  @media (min-width: $bp-medium) {
+  
+  @media (min-width: $bp-large) {
+    max-width: 445px;
     margin: 0;
   }
 }

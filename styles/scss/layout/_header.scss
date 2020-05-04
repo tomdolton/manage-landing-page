@@ -9,9 +9,9 @@
 }
 
 
+
 .header__logo {
   background: center / contain no-repeat url("../../../images/logo.svg");
-
   width: 120px;
   height: 24px;
 
@@ -21,9 +21,16 @@
 }
 
 
+
 .header__btn {
   display: none;
 }
+
+
+
+/*
+   Medium breakpoint
+   ========================================================================== */
 
 @media (min-width: $bp-medium) {
 
@@ -40,10 +47,13 @@
   .header__hamburger {
     display: none;
   }
-  
-  
 }
 
+
+
+/*
+   Large breakpoint
+   ========================================================================== */
 
 @media (min-width: $bp-large) {
   

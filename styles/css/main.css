@@ -412,23 +412,23 @@ h1 {
   line-height: 1.3;
 }
 
-h2 {
-  font-size: 1.85rem;
-}
-
 p {
   font-size: 0.9rem;
   font-weight: 300;
   line-height: 2;
 }
 
-/**
- * Clear inner floats
- */
-.clearfix::after {
-  clear: both;
-  content: '';
-  display: table;
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3.35rem;
+  }
+  h2 {
+    line-height: 1.1;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
 }
 
 /**
@@ -453,22 +453,7 @@ p {
 }
 
 /**
- * Hide text while making it readable for screen readers
- * 1. Needed in WebKit-based browsers because of an implementation bug;
- *    See: https://code.google.com/p/chromium/issues/detail?id=457146
- */
-.hide-text {
-  overflow: hidden;
-  padding: 0;
-  /* 1 */
-  text-indent: 101%;
-  white-space: nowrap;
-}
-
-/**
  * Hide element while making it readable for screen readers
- * Shamelessly borrowed from HTML5Boilerplate:
- * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
  */
 .visually-hidden {
   border: 0;
@@ -515,6 +500,9 @@ p {
   display: none;
 }
 
+/*
+   Medium breakpoint
+   ========================================================================== */
 @media (min-width: 768px) {
   .header {
     padding-bottom: 95px;
@@ -529,6 +517,9 @@ p {
   }
 }
 
+/*
+   Large breakpoint
+   ========================================================================== */
 @media (min-width: 1024px) {
   .header__btn {
     display: block;
@@ -578,6 +569,8 @@ p {
 @media (min-width: 768px) {
   .hero__text-box {
     text-align: left;
+    max-width: 450px;
+    margin-right: 4rem;
   }
 }
 
@@ -589,6 +582,12 @@ p {
   font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero__copy {
+    max-width: 335px;
+  }
 }
 
 .about {
@@ -606,10 +605,7 @@ p {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    padding-left: 20px;
-    /* 3 */
-    padding-right: 20px;
-    /* 3 */
+    padding: 0 20px 6rem;
   }
 }
 
@@ -629,6 +625,7 @@ p {
 
 .about__heading {
   margin-bottom: 1.5rem;
+  font-size: 1.85rem;
 }
 
 @media (min-width: 1024px) {
@@ -639,21 +636,8 @@ p {
 
 @media (min-width: 1024px) {
   .about__subheading {
-    font-size: 1rem;
-    /**
-     * @TODO
-     * put font size for this and heading here into typograohy for all similar?
-     */
     max-width: 330px;
   }
-}
-
-/**
- * @TODO
- * Maybe move this to _list.scss
- */
-.about__list {
-  padding-left: 1rem;
 }
 
 .testimonials {
@@ -661,9 +645,22 @@ p {
   padding-bottom: 2.625rem;
 }
 
+@media (min-width: 1024px) {
+  .testimonials {
+    padding-bottom: 11.375rem;
+  }
+}
+
 .testimonials__heading {
   font-size: 2rem;
   margin-bottom: 3.75rem;
+}
+
+@media (min-width: 1024px) {
+  .testimonials__heading {
+    font-size: 2.4rem;
+    margin-bottom: 4.75rem;
+  }
 }
 
 .testimonials__slider {
@@ -690,6 +687,7 @@ p {
 
 .cta__heading {
   color: white;
+  font-size: 2.42rem;
   font-weight: 500;
   max-width: 310px;
   margin: 0 auto 2rem;
@@ -812,7 +810,12 @@ p {
   margin-bottom: 3.15rem;
 }
 
-.footer__social-icons img {
+.footer__social-icons a:hover path,
+.footer__social-icons a:focus path {
+  fill: #f25f3a;
+}
+
+.footer__social-icons svg {
   width: 2rem;
   height: 2rem;
 }
@@ -831,7 +834,7 @@ p {
     margin: 0.65rem 0 0;
     max-width: 155px;
   }
-  .footer__social-icons img {
+  .footer__social-icons svg {
     width: 1.25rem;
     height: 1.25rem;
   }
@@ -873,8 +876,21 @@ p {
   font-size: 0.9rem;
 }
 
+.footer__nav a:hover, .footer__nav a:active, .footer__nav a:focus {
+  color: #f25f3a;
+}
+
 .footer__nav li {
   margin-bottom: 0.6rem;
+}
+
+@media (min-width: 768px) {
+  .footer__nav {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -933,9 +949,21 @@ p {
   }
 }
 
+.attribution {
+  background: #1d1e25;
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 0.65rem;
+}
+
+.attribution a {
+  color: white;
+}
+
 .header::after {
   content: "";
-  background: 60px -125px/450px no-repeat url("../../../images/bg-tablet-pattern.svg");
+  background: 60px -80px/450px no-repeat url("../../../images/bg-tablet-pattern.svg");
+  background-size: 110%;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -944,29 +972,68 @@ p {
   z-index: -2;
 }
 
+@media (min-width: 649px) {
+  .header::after {
+    background-position: 100px -10px;
+    background-size: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .header::after {
+    background-position: 500px -10px;
+    background-size: 60%;
+  }
+}
+
 @media (min-width: 1024px) {
   .header::after {
-    background-position: 750px -170px;
-    background-size: 800px;
+    background-position: 750px -220px;
+    background-size: 58%;
+  }
+}
+
+@media (min-width: 1758px) {
+  .header::after {
+    background-position: 930px -400px;
   }
 }
 
 .about::after {
   content: "";
   background: center/325px no-repeat url("../../../images/bg-tablet-pattern.svg");
-  width: 100%;
-  height: 100%;
+  background-size: contain;
+  width: 80%;
+  height: 80%;
   position: absolute;
   left: 215px;
-  top: 340px;
+  top: 70%;
   z-index: -2;
+}
+
+@media (min-width: 649px) {
+  .about::after {
+    background-position: -500px 400px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background-size: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .about::after {
+    background-position: -300px 100px;
+    background-size: 50%;
+  }
 }
 
 @media (min-width: 1024px) {
   .about::after {
-    background-size: 800px;
-    left: -750px;
-    top: 800px;
+    height: 200%;
+    bottom: -1000px;
+    background-position: -380px 500px;
   }
 }
 
@@ -981,11 +1048,23 @@ p {
   padding: 0.8rem 1.9rem 0.94rem;
   -webkit-box-shadow: 0 17px 8px -7px rgba(184, 122, 107, 0.15), 0 6px 6px -5px rgba(119, 88, 80, 0.35);
           box-shadow: 0 17px 8px -7px rgba(184, 122, 107, 0.15), 0 6px 6px -5px rgba(119, 88, 80, 0.35);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  z-index: 1;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+  background: #f99076;
 }
 
 .btn--white {
   background: white;
   color: #f25f3a;
+}
+
+.btn--white:hover, .btn--white:active, .btn--white:focus {
+  background: white;
+  color: #f99076;
 }
 
 .nav {
@@ -1006,6 +1085,12 @@ p {
   font-size: 0.8rem;
   display: block;
   padding: 11px 0;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.nav__link:hover, .nav__link:active, .nav__link:focus {
+  color: #9095a7;
 }
 
 @media (min-width: 768px) {
@@ -1035,8 +1120,8 @@ p {
   top: 103px;
   border-radius: 5px;
   padding: 22px 0;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   z-index: 10;
 }
 
@@ -1051,8 +1136,8 @@ p {
   z-index: -1;
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .modal--active {
@@ -1064,6 +1149,7 @@ p {
 .list {
   list-style: none;
   position: relative;
+  padding-left: 1rem;
 }
 
 .list__number {
@@ -1092,7 +1178,13 @@ p {
   margin-right: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 538px) {
+  .list__heading {
+    border-radius: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
   .list__heading {
     background: none;
     margin: 0;
@@ -1107,8 +1199,9 @@ p {
   margin-right: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .list__text {
+    max-width: 445px;
     margin: 0;
   }
 }
@@ -1212,7 +1305,7 @@ p {
 .updates-form__input {
   color: #9095a7;
   font-size: 0.8rem;
-  width: 240px;
+  width: 200px;
   border-radius: 50px;
   border: none;
   padding: 0.775rem 1.5rem;
@@ -1226,6 +1319,11 @@ p {
   }
 }
 
+.updates-form__input--error {
+  border: 1px solid #ff3333;
+  color: #ff3333;
+}
+
 @media (max-width: 370px) {
   .updates-form__btn {
     width: 100%;
@@ -1233,12 +1331,14 @@ p {
 }
 
 .updates-form__error {
-  color: #f25f3a;
+  color: #ff3333;
   font-size: 0.7rem;
+  font-style: italic;
   text-align: left;
+  visibility: hidden;
   display: block;
-  margin-top: 0.5rem;
-  margin-left: 1.5rem;
+  margin-top: 0.2rem;
+  margin-left: 1rem;
 }
 
 @media (max-width: 370px) {
@@ -1250,5 +1350,10 @@ p {
 
 .updates-form__error--active {
   visibility: visible;
+}
+
+.updates-form__error--success {
+  visibility: visible;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */
