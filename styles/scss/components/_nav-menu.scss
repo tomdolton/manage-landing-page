@@ -32,6 +32,7 @@
 
   @media (min-width: $bp-medium) {
     display: inline-block;
+    font-weight: 400;
     
     &:not(:last-child) {
       margin-right: 2rem;

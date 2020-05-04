@@ -2,15 +2,6 @@
 // Updates form component
 // -----------------------------------------------------------------------------
 
-.updates-form {
-  position: relative;
-  max-width: 340px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-
 .updates-form__input {
   color: $clr-gray-mid;
   font-size: 0.8rem;
@@ -19,19 +10,36 @@
   border: none;
   padding: 0.775rem 1.5rem;
   margin-right: 0.25rem;
+
+  @media (max-width: 370px) {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 
+
+.updates-form__btn {
+  @media (max-width: 370px) {
+    width: 100%;
+  }
+}
 
 
 .updates-form__error {
   color: $clr-red;
   font-size: 0.7rem;
   text-align: left;
-  visibility: hidden;
+  // visibility: hidden;
   
   display: block;
   margin-top: 0.5rem;
   margin-left: 1.5rem;
+
+  @media (max-width: 370px) {
+    margin-left: 0;
+    text-align: center; 
+  }
+
 }
 
 

@@ -7,6 +7,8 @@
   position: relative;
 }
 
+
+
 .list__number {
   background: $clr-red;
   color: $clr-white;
@@ -14,7 +16,13 @@
   border-radius: 50px;
   padding: 0.5rem 1.5rem;
   margin-right: 0.875rem;
+
+  @media (min-width: $bp-large) {
+    margin-right: 1.75rem;
+  }
 }
+
+
 
 .list__heading {
   background: $clr-red-light;
@@ -25,14 +33,27 @@
   max-width: 520px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: $bp-medium) {
+    background: none;
+    margin: 0;
+    position: relative;
+    right: 100px;
+  }
 }
+
+
 
 .list__text {
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
-
+  @media (min-width: $bp-medium) {
+    margin: 0;
+  }
 }
+
+
 
 .list__item {
   margin-bottom: 3rem;

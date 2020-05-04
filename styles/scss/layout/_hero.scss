@@ -5,17 +5,26 @@
 .hero {
   @include flex(column);
   position: relative;
-  margin-bottom: 80px;
+  margin-bottom: 105px;
+
+  @media (min-width: $bp-medium) {
+    flex-direction: row-reverse;
+  }
 }
 
 .hero__images {
   order: -1;
   z-index: -1;
+  position: relative;
 }
 
 .hero__text-box {
   text-align: center;
   max-width: 315px;
+
+  @media (min-width: $bp-medium) {
+    text-align: left;
+  }
 }
 
 .hero__heading {

@@ -2,19 +2,55 @@
 // Slider component
 // -----------------------------------------------------------------------------
 
+/*
+   Flickity carousel classes
+   ========================================================================== */
+
+.main-carousel {
+  max-width: 1684px;
+  margin: 0 auto;
+}
+
+
+.carousel-cell {
+  width: 100%;
+  padding-top: 35px;
+  margin-right: 1rem;
+
+  @media (min-width: $bp-medium) {
+    max-width: 540px;
+    width: 40%;
+  }
+
+  @media (min-width: $bp-large) {
+    margin-right: 2rem;
+  }
+}
+
+
+
+/*
+   Item inside carousel
+   ========================================================================== */
+
 .slider__item {
-  display: none;
   background: $clr-gray-light;
+  width: 100%;
   max-width: 335px;
   height: 250px;
   padding: 0 1rem 1.7rem;
   margin: 0 auto 0.5rem;
+
+  @media (min-width: $bp-large) {
+    max-width: 540px;
+    height: 220px;
+  }
 }
 
-.slider__item--active {
-  display: block;
-}
 
+.slider__text {
+  line-height: 1.8;
+}
 
 
 .slider__image {
@@ -25,15 +61,35 @@
 }
 
 
-.slider__dot {
-  display: inline-block;
-  border-radius: 50%;
-  border: 1px $clr-red solid;
-  width: 8px;
-  height: 8px;
-  cursor: pointer;
+
+/*
+   Flickity controls classes
+   ========================================================================== */
+
+.flickity-button {
+  display: none;
+  background: transparent;
+  color: $clr-blue;
+  top: 77px;
+
+  @media (min-width: $bp-large) {
+    display: inline-block;
+  }
 }
 
-.slider__dot--active {
-  background: $clr-red;
+
+.flickity-page-dots .dot {
+  border: 2px $clr-red solid;
+  width: 8px;
+  height: 8px;
+  background: none;
+  margin: 0 2px;
+
+  &.is-selected {
+      background: $clr-red;
+  }
+
+  @media (min-width: $bp-large) {
+    display: none;
+  }
 }

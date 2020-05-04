@@ -7,12 +7,22 @@
   padding-bottom: 2.625rem;
 }
 
+
 .testimonials__heading {
   font-size: 2rem;
-  margin-bottom: 6rem;
+  margin-bottom: 3.75rem;
 }
 
 
-.testimonials__dots {
+.testimonials__slider {
   margin-bottom: 2.8125rem;
+}
+
+
+.testimonials__btn {
+  margin-top: 4.5rem;
+
+  @media (min-width: $bp-large) {
+    margin-top: 2.4rem;
+  }
 }

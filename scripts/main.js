@@ -36,47 +36,66 @@ window.addEventListener("click", (e) => {
 // Slider carousel
 // ==========================================================================
 
-let slideIndex = 1;
-const duration = 6000;
-const slides = [...document.querySelectorAll(".slider__item")];
-const sliderDots = [...document.querySelectorAll(".slider__dot")];
-const sliderDots2 = document.querySelectorAll(".slider__dot");
+//
+// Custom
+// ==========================================================================
 
-// Utility function to change a class on a document node
-function changeClass(nodeArray, cssClass, index) {
-  nodeArray.map(node => {
-    node.classList.remove(cssClass);
-  });
-  nodeArray[index].classList.add(cssClass);
-}
+// let slideIndex = 1;
+// const duration = 6000;
+// const slides = [...document.querySelectorAll(".slider__item")];
+// const sliderDots = [...document.querySelectorAll(".slider__dot")];
+// const sliderDots2 = document.querySelectorAll(".slider__dot");
 
-// Changes active classes on sider based on slideIndex
-function changeSlide() {
-  changeClass(slides, "slider__item--active", slideIndex);
-  changeClass(sliderDots, "slider__dot--active", slideIndex);
-}
+// // Utility function to change a class on a document node
+// function changeClass(nodeArray, cssClass, index) {
+//   nodeArray.map(node => {
+//     node.classList.remove(cssClass);
+//   });
+//   nodeArray[index].classList.add(cssClass);
+// }
 
-// Bind click event to slider dots to call changeSide based on dot number
-for (const dot of sliderDots) {
-  dot.addEventListener("click", () => {
-    slideIndex = sliderDots.indexOf(dot);
-    changeSlide();
-    clearInterval(timer);
-    timer = setInterval(autoChange, duration);
-  });
-}
+// // Changes active classes on sider based on slideIndex
+// function changeSlide() {
+//   changeClass(slides, "slider__item--active", slideIndex);
+//   changeClass(sliderDots, "slider__dot--active", slideIndex);
+// }
 
-// Changes active classes automatically, called by setInterval
-function autoChange() {
-  if (slideIndex === slides.length - 1) {
-    slideIndex = 0;
-  } else {
-    slideIndex++;
-  }
-  changeSlide();
-}
+// // Bind click event to slider dots to call changeSide based on dot number
+// for (const dot of sliderDots) {
+//   dot.addEventListener("click", () => {
+//     slideIndex = sliderDots.indexOf(dot);
+//     changeSlide();
+//     clearInterval(timer);
+//     timer = setInterval(autoChange, duration);
+//   });
+// }
 
-let timer = setInterval(autoChange, duration);
+// // Changes active classes automatically, called by setInterval
+// function autoChange() {
+//   if (slideIndex === slides.length - 1) {
+//     slideIndex = 0;
+//   } else {
+//     slideIndex++;
+//   }
+//   changeSlide();
+// }
+
+// let timer = setInterval(autoChange, duration);
+
+
+//
+// Initialize Flickity
+// ==========================================================================
+
+const carousel = document.querySelector(".main-carousel");
+const flkty = new Flickity(carousel, {
+  // options
+  wrapAround: true,
+  autoPlay: 5000
+  // adaptiveHeight: true
+});
+
+
 
 
 

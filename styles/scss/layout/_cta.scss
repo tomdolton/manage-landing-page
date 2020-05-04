@@ -10,6 +10,8 @@
   position: relative;
 }
 
+
+
 .cta__heading {
   color: $clr-white;
   font-weight: 500;
@@ -17,6 +19,9 @@
   margin: 0 auto 2rem;
 }
 
+
+
+// Background image (mobile view)
 .cta::after {
   content: "";
   background: 0 50% / 100px no-repeat url("../../../images/bg-simplify-section-mobile.svg");
@@ -25,4 +30,40 @@
   position: absolute;
   left: 0;
   top: 0;
+}
+
+
+
+//
+// Medium+ screens layout
+// ==========================================================================
+
+@media (min-width: $bp-medium) {
+
+  .cta .container {
+    @include flex(row);
+  }
+
+
+
+  .cta {
+    text-align: left;
+    padding-top: 60px;
+    padding-bottom: 65px; 
+  }
+
+
+
+  .cta__heading {
+    max-width: 450px;
+    margin: 0;
+  }
+
+
+
+  // Background image (desktop view)
+  .cta::after {
+    background: 0 100% / cover no-repeat url("../../../images/bg-simplify-section-desktop.svg");
+    left: 17%;
+  }
 }

@@ -23,7 +23,8 @@ $clr-white: hsl(0, 0%, 100%);
 
 
 // Container's maximum width
-$max-width: 1180px;
+// + padding
+$max-width: 1110px + 40px;
 
 
 
